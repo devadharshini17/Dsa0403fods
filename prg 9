@@ -1,0 +1,5 @@
+SOURCE CODE:
+import pandas as pd
+average_price = property_data.groupby('location')['listing price'].mean()
+num_properties = len(property_data[property_data['number of bedrooms'] > 4])
+property_with_largest_area = property_data[property_data['area in square feet'] == property_data['area in square feet'].max()]
