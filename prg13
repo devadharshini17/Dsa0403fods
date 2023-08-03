@@ -1,0 +1,20 @@
+import re
+with open("sample_text.txt", "r") as file:
+text = file.read()
+processed_text = re.sub(r'[^\w\s]', '', text)
+words = processed_text.split()
+word_freq = {}
+
+for word in words:
+
+
+word_freq[word] = word_freq.get(word, 0) + 1
+
+
+sorted_word_freq = sorted(word_freq.items(), key=lambda x: x[1], reverse=True)
+
+
+for word, freq in sorted_word_freq:
+
+
+print(f"{word}: {freq}")
