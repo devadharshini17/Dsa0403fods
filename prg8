@@ -1,0 +1,9 @@
+import pandas as pd
+order_data['order date'] = pd.to_datetime(order_data['order date'])
+start_date = pd.Timestamp.now().normalize() - pd.DateOffset(months=1)
+end_date = pd.Timestamp.now().normalize()
+past_month_data = order_data[(order_data['order date'] >= start_date) & (order_data['order date'] <= end_date)]
+product_sales = past_month_data.groupby('product name')['order quantity'].sum()
+sorted_product_sales = product_sales.sort_values(ascending=False)
+top_5_products = sorted_product_sales.head(5)
+print(top_5_products)
