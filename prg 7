@@ -1,0 +1,28 @@
+SOURCE CODE:
+import pandas as pd
+total_orders = order_data.groupby('customer ID').size()
+
+
+average_quantity = order_data.groupby('product name')['order quantity'].mean()
+
+earliest_date = order_data['order date'].min()
+
+
+latest_date = order_data['order date'].max()
+
+print("Total number of orders made by each customer:")
+
+
+print(total_orders)
+
+
+print("\nAverage order quantity for each product:")
+
+
+print(average_quantity)
+
+
+print("\nEarliest order date:", earliest_date)
+
+
+print("Latest order date:", latest_date)
