@@ -1,0 +1,33 @@
+SOURCE CODE:
+import matplotlib.pyplot as plT
+
+
+plt.plot(months, sales_values)
+
+
+plt.xlabel('Month')
+
+
+plt.ylabel('Sales')
+
+
+plt.title('Monthly Sales Data')
+
+
+plt.show()
+
+import matplotlib.pyplot as plt
+
+plt.bar(months, sales_values)
+
+
+plt.xlabel('Month')
+
+
+plt.ylabel('Sales')
+
+
+plt.title('Monthly Sales Data')
+
+
+plt.show()
