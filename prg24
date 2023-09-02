@@ -1,0 +1,10 @@
+import numpy as np
+from sklearn.neighbors import KNeighborsClassifier
+data = np.loadtxt('patient_data.csv', delimiter=',')
+X = data[:, :-1]
+y = data[:, -1]
+knn = KNeighborsClassifier(n_neighbors=k)
+knn.fit(X, y)
+new_patient_features = [float(x) for x in input("Enter the patient's features, separated by spaces: ").split()]
+prediction = knn.predict([new_patient_features])
+print("The patient has the medical condition:", prediction)
