@@ -1,0 +1,14 @@
+import numpy as np
+import pandas as pd
+from scipy import stats
+data = pd.read_csv("rare_elements.csv")
+sample_size = int(input("Enter the sample size: "))
+confidence_level = float(input("Enter the confidence level (as a decimal between 0 and 1): "))
+precision = float(input("Enter the desired level of precision: "))
+mean = data.mean()
+std_err = data.std() / np.sqrt(sample_size)
+z_crit = stats.norm.ppf(1 - (1 - confidence_level) / 2)
+ci = mean +/- z_crit * std_err
+print("Point estimate of the population mean:", mean)
+print("Standard error of the mean:", std_err)
+print("Confidence interval:", ci)
