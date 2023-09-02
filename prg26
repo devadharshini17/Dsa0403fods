@@ -1,0 +1,13 @@
+import numpy as np
+from sklearn.linear_model import LinearRegression
+data = np.loadtxt('housing_data.csv', delimiter=',')
+X = data[:, :-1]
+y = data[:, -1]
+model = LinearRegression()
+model.fit(X, y)
+area = float(input("Enter the area of the house in square feet: "))
+bedrooms = int(input("Enter the number of bedrooms: "))
+bathrooms = int(input("Enter the number of bathrooms: "))
+location = input("Enter the location of the house: ")
+prediction = model.predict([[area, bedrooms, bathrooms, location]])
+print("The predicted price of the house is:", prediction)
