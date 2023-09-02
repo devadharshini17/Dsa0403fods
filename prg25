@@ -1,0 +1,12 @@
+import numpy as np
+from sklearn.datasets import load_iris
+from sklearn.tree import DecisionTreeClassifier
+iris = load_iris()
+clf = DecisionTreeClassifier()
+clf.fit(iris.data, iris.target)
+sepal_length = float(input("Enter the sepal length: "))
+sepal_width = float(input("Enter the sepal width: "))
+petal_length = float(input("Enter the petal length: "))
+petal_width = float(input("Enter the petal width: "))
+prediction = clf.predict([[sepal_length, sepal_width, petal_length, petal_width]])
+print("The flower is classified as:", iris.target_names[prediction])
